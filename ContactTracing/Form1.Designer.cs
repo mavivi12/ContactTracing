@@ -42,8 +42,8 @@ namespace ContactTracing
             this.MobileNumberLabel = new System.Windows.Forms.Label();
             this.suffix_input = new System.Windows.Forms.TextBox();
             this.firstName_input = new System.Windows.Forms.TextBox();
-            this.lastName_input = new System.Windows.Forms.TextBox();
             this.middleName_input = new System.Windows.Forms.TextBox();
+            this.lastName_input = new System.Windows.Forms.TextBox();
             this.select_Gender = new System.Windows.Forms.ComboBox();
             this.birthDate_input = new System.Windows.Forms.TextBox();
             this.homeAddress_input = new System.Windows.Forms.TextBox();
@@ -69,6 +69,43 @@ namespace ContactTracing
             this.ContactTracingLabel.TabIndex = 0;
             this.ContactTracingLabel.Text = "Contact Tracing";
             this.ContactTracingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Philippines
+            // 
+            this.Philippines.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Philippines.AutoSize = true;
+            this.Philippines.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Philippines.ForeColor = System.Drawing.Color.Navy;
+            this.Philippines.Location = new System.Drawing.Point(243, 73);
+            this.Philippines.Name = "Philippines";
+            this.Philippines.Size = new System.Drawing.Size(114, 24);
+            this.Philippines.TabIndex = 21;
+            this.Philippines.Text = "PHILIPPINES";
+            // 
+            // Check_ifMinor
+            // 
+            this.Check_ifMinor.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Check_ifMinor.AutoSize = true;
+            this.Check_ifMinor.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Check_ifMinor.ForeColor = System.Drawing.Color.White;
+            this.Check_ifMinor.Location = new System.Drawing.Point(33, 111);
+            this.Check_ifMinor.Name = "Check_ifMinor";
+            this.Check_ifMinor.Size = new System.Drawing.Size(270, 28);
+            this.Check_ifMinor.TabIndex = 5;
+            this.Check_ifMinor.Text = "Check if filling up for a minor";
+            this.Check_ifMinor.UseVisualStyleBackColor = true;
+            // 
+            // SuffixNameLabel
+            // 
+            this.SuffixNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.SuffixNameLabel.AutoSize = true;
+            this.SuffixNameLabel.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SuffixNameLabel.ForeColor = System.Drawing.Color.AliceBlue;
+            this.SuffixNameLabel.Location = new System.Drawing.Point(49, 143);
+            this.SuffixNameLabel.Name = "SuffixNameLabel";
+            this.SuffixNameLabel.Size = new System.Drawing.Size(64, 28);
+            this.SuffixNameLabel.TabIndex = 4;
+            this.SuffixNameLabel.Text = "Suffix";
             // 
             // FirstNameLabel
             // 
@@ -105,31 +142,6 @@ namespace ContactTracing
             this.LastNameLabel.Size = new System.Drawing.Size(115, 28);
             this.LastNameLabel.TabIndex = 3;
             this.LastNameLabel.Text = "Last Name";
-            // 
-            // SuffixNameLabel
-            // 
-            this.SuffixNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.SuffixNameLabel.AutoSize = true;
-            this.SuffixNameLabel.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SuffixNameLabel.ForeColor = System.Drawing.Color.AliceBlue;
-            this.SuffixNameLabel.Location = new System.Drawing.Point(49, 143);
-            this.SuffixNameLabel.Name = "SuffixNameLabel";
-            this.SuffixNameLabel.Size = new System.Drawing.Size(64, 28);
-            this.SuffixNameLabel.TabIndex = 4;
-            this.SuffixNameLabel.Text = "Suffix";
-            // 
-            // Check_ifMinor
-            // 
-            this.Check_ifMinor.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Check_ifMinor.AutoSize = true;
-            this.Check_ifMinor.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Check_ifMinor.ForeColor = System.Drawing.Color.White;
-            this.Check_ifMinor.Location = new System.Drawing.Point(33, 111);
-            this.Check_ifMinor.Name = "Check_ifMinor";
-            this.Check_ifMinor.Size = new System.Drawing.Size(270, 28);
-            this.Check_ifMinor.TabIndex = 5;
-            this.Check_ifMinor.Text = "Check if filling up for a minor";
-            this.Check_ifMinor.UseVisualStyleBackColor = true;
             // 
             // GenderLabel
             // 
@@ -211,16 +223,6 @@ namespace ContactTracing
             this.firstName_input.Size = new System.Drawing.Size(331, 32);
             this.firstName_input.TabIndex = 12;
             // 
-            // lastName_input
-            // 
-            this.lastName_input.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lastName_input.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lastName_input.Location = new System.Drawing.Point(224, 256);
-            this.lastName_input.Name = "lastName_input";
-            this.lastName_input.PlaceholderText = "Last Name";
-            this.lastName_input.Size = new System.Drawing.Size(331, 32);
-            this.lastName_input.TabIndex = 13;
-            // 
             // middleName_input
             // 
             this.middleName_input.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -230,6 +232,16 @@ namespace ContactTracing
             this.middleName_input.PlaceholderText = "Middle Name";
             this.middleName_input.Size = new System.Drawing.Size(331, 32);
             this.middleName_input.TabIndex = 14;
+            // 
+            // lastName_input
+            // 
+            this.lastName_input.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lastName_input.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lastName_input.Location = new System.Drawing.Point(224, 256);
+            this.lastName_input.Name = "lastName_input";
+            this.lastName_input.PlaceholderText = "Last Name";
+            this.lastName_input.Size = new System.Drawing.Size(331, 32);
+            this.lastName_input.TabIndex = 13;
             // 
             // select_Gender
             // 
@@ -285,18 +297,6 @@ namespace ContactTracing
             this.mobileNumber_input.Size = new System.Drawing.Size(331, 32);
             this.mobileNumber_input.TabIndex = 20;
             // 
-            // Philippines
-            // 
-            this.Philippines.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Philippines.AutoSize = true;
-            this.Philippines.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Philippines.ForeColor = System.Drawing.Color.Navy;
-            this.Philippines.Location = new System.Drawing.Point(243, 73);
-            this.Philippines.Name = "Philippines";
-            this.Philippines.Size = new System.Drawing.Size(114, 24);
-            this.Philippines.TabIndex = 21;
-            this.Philippines.Text = "PHILIPPINES";
-            // 
             // DataPrivacy_Agree
             // 
             this.DataPrivacy_Agree.AutoSize = true;
@@ -337,6 +337,7 @@ namespace ContactTracing
             this.submit_Btn.TabIndex = 24;
             this.submit_Btn.Text = "Submit";
             this.submit_Btn.UseVisualStyleBackColor = false;
+            this.submit_Btn.Click += new System.EventHandler(this.Submit_Btn_Click);
             // 
             // cancel_Btn
             // 
