@@ -1,0 +1,10 @@
+System.Windows.Forms.Label, Text: Suffix: aq
+First Name: awd
+Middle Name: awa
+Last Name: awd
+Gender: fea
+Birth Date: se
+Home Address: jabjwb
+Email: ijfia
+Mobile Number: efbj
+*******************************************************

@@ -33,6 +33,11 @@ namespace ContactTracing
             outputFile.WriteLine(MobileNumberLabel.Text + ": " + mobileNumber_input.Text);
             outputFile.WriteLine("*******************************************************");
             outputFile.Close();
+
+            StreamReader inputFile;
+            inputFile = File.OpenText("Contact Tracing.txt");
+            MessageBox.Show(inputFile.ReadToEnd());
+            inputFile.Close();
         }
     }
 }
