@@ -29,6 +29,7 @@ namespace ContactTracing
         /// </summary>
         private void InitializeComponent()
         {
+            this.select_Gender = new System.Windows.Forms.ComboBox();
             this.ContactTracingLabel = new System.Windows.Forms.Label();
             this.PHLabel = new System.Windows.Forms.Label();
             this.Check_ifMinor = new System.Windows.Forms.CheckBox();
@@ -45,7 +46,6 @@ namespace ContactTracing
             this.firstName_input = new System.Windows.Forms.TextBox();
             this.lastName_input = new System.Windows.Forms.TextBox();
             this.middleName_input = new System.Windows.Forms.TextBox();
-            this.select_Gender = new System.Windows.Forms.ComboBox();
             this.birthDate_input = new System.Windows.Forms.TextBox();
             this.homeAddress_input = new System.Windows.Forms.TextBox();
             this.email_input = new System.Windows.Forms.TextBox();
@@ -56,7 +56,24 @@ namespace ContactTracing
             this.submit_Btn = new System.Windows.Forms.Button();
             this.cancel_Btn = new System.Windows.Forms.Button();
             this.submitAnotherLabel = new System.Windows.Forms.LinkLabel();
+            this.adminLabel = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
+            // 
+            // select_Gender
+            // 
+            this.select_Gender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.select_Gender.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.select_Gender.FormattingEnabled = true;
+            this.select_Gender.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.select_Gender.Items.AddRange(new object[] {
+            "--select gender--",
+            "Female",
+            "Male"});
+            this.select_Gender.Location = new System.Drawing.Point(224, 296);
+            this.select_Gender.MaxDropDownItems = 3;
+            this.select_Gender.Name = "select_Gender";
+            this.select_Gender.Size = new System.Drawing.Size(331, 33);
+            this.select_Gender.TabIndex = 15;
             // 
             // ContactTracingLabel
             // 
@@ -252,22 +269,6 @@ namespace ContactTracing
             this.middleName_input.Size = new System.Drawing.Size(331, 32);
             this.middleName_input.TabIndex = 13;
             // 
-            // select_Gender
-            // 
-            this.select_Gender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.select_Gender.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.select_Gender.FormattingEnabled = true;
-            this.select_Gender.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.select_Gender.Items.AddRange(new object[] {
-            "--select gender--",
-            "Female",
-            "Male"});
-            this.select_Gender.Location = new System.Drawing.Point(224, 296);
-            this.select_Gender.MaxDropDownItems = 3;
-            this.select_Gender.Name = "select_Gender";
-            this.select_Gender.Size = new System.Drawing.Size(331, 33);
-            this.select_Gender.TabIndex = 15;
-            // 
             // birthDate_input
             // 
             this.birthDate_input.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -392,12 +393,26 @@ namespace ContactTracing
             this.submitAnotherLabel.Text = "Submit another response";
             this.submitAnotherLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.SubmitAnotherLabel_LinkClicked);
             // 
+            // adminLabel
+            // 
+            this.adminLabel.AutoSize = true;
+            this.adminLabel.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.adminLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.adminLabel.Location = new System.Drawing.Point(49, 562);
+            this.adminLabel.Name = "adminLabel";
+            this.adminLabel.Size = new System.Drawing.Size(179, 24);
+            this.adminLabel.TabIndex = 31;
+            this.adminLabel.TabStop = true;
+            this.adminLabel.Text = "Access Data as ADMIN";
+            this.adminLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.AdminLabel_LinkClicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(595, 606);
+            this.Controls.Add(this.adminLabel);
             this.Controls.Add(this.submitAnotherLabel);
             this.Controls.Add(this.cancel_Btn);
             this.Controls.Add(this.submit_Btn);
@@ -442,7 +457,6 @@ namespace ContactTracing
         private System.Windows.Forms.Label ContactTracingLabel;
         private System.Windows.Forms.Label PHLabel;
         private System.Windows.Forms.CheckBox Check_ifMinor;
-        private System.Windows.Forms.Label SuffixNameLabel;
         private System.Windows.Forms.Label FirstNameLabel;
         private System.Windows.Forms.Label MiddleNameLabel;
         private System.Windows.Forms.Label LastNameLabel;
@@ -466,6 +480,8 @@ namespace ContactTracing
         private System.Windows.Forms.Button submit_Btn;
         private System.Windows.Forms.Button cancel_Btn;
         private System.Windows.Forms.LinkLabel submitAnotherLabel;
+        private System.Windows.Forms.LinkLabel adminLabel;
+        private System.Windows.Forms.Label SuffixNameLabel;
     }
 }
 

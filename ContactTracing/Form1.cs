@@ -18,7 +18,7 @@ namespace ContactTracing
             InitializeComponent();
         }
 
-        private void Submit_Btn_Click(object sender, EventArgs e)
+        public void Submit_Btn_Click(object sender, EventArgs e)
         {
             String minor = "";
 
@@ -40,7 +40,7 @@ namespace ContactTracing
             else
             {
                 StreamWriter outputFile;
-                outputFile = File.CreateText("Contact Tracing Information.txt");
+                outputFile = File.CreateText("Personal Information.txt");
                 outputFile.WriteLine(minor);
                 outputFile.WriteLine(SuffixNameLabel.Text + ": " + suffix_input.Text);
                 outputFile.WriteLine(FirstNameLabel.Text + ": " + firstName_input.Text);
@@ -54,14 +54,29 @@ namespace ContactTracing
                 outputFile.WriteLine("*******************************************************");
                 outputFile.Close();
 
+                StreamWriter allOutput;
+                allOutput = File.AppendText("Contact Tracing Information.txt");
+                allOutput.WriteLine(minor);
+                allOutput.WriteLine(SuffixNameLabel.Text + ": " + suffix_input.Text);
+                allOutput.WriteLine(FirstNameLabel.Text + ": " + firstName_input.Text);
+                allOutput.WriteLine(MiddleNameLabel.Text + ": " + lastName_input.Text);
+                allOutput.WriteLine(LastNameLabel.Text + ": " + middleName_input.Text);
+                allOutput.WriteLine(GenderLabel.Text + ": " + select_Gender.Text);
+                allOutput.WriteLine(BirthdateLabel.Text + ": " + birthDate_input.Text);
+                allOutput.WriteLine(HomeAddressLabel.Text + ": " + homeAddress_input.Text);
+                allOutput.WriteLine(EmailLabel.Text + ": " + email_input.Text);
+                allOutput.WriteLine(MobileNumberLabel.Text + ": " + mobileNumber_input.Text);
+                allOutput.WriteLine("*******************************************************");
+                allOutput.Close();
+
                 StreamReader inputFile;
-                inputFile = File.OpenText("Contact Tracing Information.txt");
+                inputFile = File.OpenText("Personal Information.txt");
                 MessageBox.Show(inputFile.ReadToEnd());
                 inputFile.Close();
             }
         }
 
-        private void MobileNumber_input_KeyPress(object sender, KeyPressEventArgs e)
+        public void MobileNumber_input_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((!char.IsNumber(e.KeyChar)) && (!char.IsControl(e.KeyChar)))
             {
@@ -69,7 +84,7 @@ namespace ContactTracing
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void Form1_Load(object sender, EventArgs e)
         {
             select_Gender.SelectedIndex = 0;
         }
@@ -100,6 +115,13 @@ namespace ContactTracing
             email_input.Clear();
             mobileNumber_input.Clear();
             checkAgree.Checked = false;
+        }
+
+        private void AdminLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form Adminlogin = new Form2();
+            Adminlogin.Show();
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -17,3 +17,4 @@ C:\Users\Marvic\Source\Repos\ContactTracing\ContactTracing\obj\Debug\net5.0-wind
 C:\Users\Marvic\Source\Repos\ContactTracing\ContactTracing\obj\Debug\net5.0-windows\ContactTracing.pdb
 C:\Users\Marvic\Source\Repos\ContactTracing\ContactTracing\obj\Debug\net5.0-windows\ContactTracing.genruntimeconfig.cache
 C:\Users\Marvic\Source\Repos\ContactTracing\ContactTracing\obj\Debug\net5.0-windows\ContactTracing.Properties.Resources.resources
+C:\Users\Marvic\Source\Repos\ContactTracing\ContactTracing\obj\Debug\net5.0-windows\ContactTracing.Form2.resources
