@@ -55,6 +55,8 @@ namespace ContactTracing
             this.Data_PrivacyLabel = new System.Windows.Forms.LinkLabel();
             this.submit_Btn = new System.Windows.Forms.Button();
             this.cancel_Btn = new System.Windows.Forms.Button();
+            this.SaveBtn = new System.Windows.Forms.Button();
+            this.saveFile = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // ContactTracingLabel
@@ -296,6 +298,7 @@ namespace ContactTracing
             this.mobileNumber_input.PlaceholderText = "Mobile Number (0999) 999 9999";
             this.mobileNumber_input.Size = new System.Drawing.Size(331, 32);
             this.mobileNumber_input.TabIndex = 19;
+            this.mobileNumber_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MobileNumber_input_KeyPress);
             // 
             // checkAgree
             // 
@@ -339,7 +342,7 @@ namespace ContactTracing
             this.submit_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.submit_Btn.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.submit_Btn.ForeColor = System.Drawing.Color.White;
-            this.submit_Btn.Location = new System.Drawing.Point(75, 538);
+            this.submit_Btn.Location = new System.Drawing.Point(358, 538);
             this.submit_Btn.Name = "submit_Btn";
             this.submit_Btn.Size = new System.Drawing.Size(91, 38);
             this.submit_Btn.TabIndex = 24;
@@ -358,7 +361,7 @@ namespace ContactTracing
             this.cancel_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cancel_Btn.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cancel_Btn.ForeColor = System.Drawing.Color.White;
-            this.cancel_Btn.Location = new System.Drawing.Point(187, 538);
+            this.cancel_Btn.Location = new System.Drawing.Point(464, 538);
             this.cancel_Btn.Name = "cancel_Btn";
             this.cancel_Btn.Size = new System.Drawing.Size(91, 38);
             this.cancel_Btn.TabIndex = 25;
@@ -366,12 +369,36 @@ namespace ContactTracing
             this.cancel_Btn.UseVisualStyleBackColor = false;
             this.cancel_Btn.Click += new System.EventHandler(this.Cancel_Btn_Click);
             // 
+            // SaveBtn
+            // 
+            this.SaveBtn.AutoSize = true;
+            this.SaveBtn.BackColor = System.Drawing.Color.Blue;
+            this.SaveBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SaveBtn.FlatAppearance.BorderSize = 0;
+            this.SaveBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.SaveBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
+            this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.SaveBtn.Font = new System.Drawing.Font("Quicksand", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SaveBtn.ForeColor = System.Drawing.Color.White;
+            this.SaveBtn.Location = new System.Drawing.Point(54, 544);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(64, 31);
+            this.SaveBtn.TabIndex = 27;
+            this.SaveBtn.Text = "Save";
+            this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            // 
+            // saveFile
+            // 
+            this.saveFile.Filter = "All Files|*.txt";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(595, 592);
+            this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.cancel_Btn);
             this.Controls.Add(this.submit_Btn);
             this.Controls.Add(this.Data_PrivacyLabel);
@@ -436,6 +463,8 @@ namespace ContactTracing
         private System.Windows.Forms.LinkLabel Data_PrivacyLabel;
         private System.Windows.Forms.Button submit_Btn;
         private System.Windows.Forms.Button cancel_Btn;
+        private System.Windows.Forms.Button SaveBtn;
+        private System.Windows.Forms.SaveFileDialog saveFile;
     }
 }
 

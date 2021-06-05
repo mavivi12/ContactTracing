@@ -18,6 +18,14 @@ namespace ContactTracing
             InitializeComponent();
         }
 
+        private void MobileNumber_input_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((!char.IsNumber(e.KeyChar)) && (!char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void Submit_Btn_Click(object sender, EventArgs e)
         {
             StreamWriter outputFile;
@@ -43,6 +51,11 @@ namespace ContactTracing
         private void Cancel_Btn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
