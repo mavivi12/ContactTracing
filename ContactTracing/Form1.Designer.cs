@@ -79,7 +79,7 @@ namespace ContactTracing
             this.Philippines.AutoSize = true;
             this.Philippines.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Philippines.ForeColor = System.Drawing.Color.Navy;
-            this.Philippines.Location = new System.Drawing.Point(243, 73);
+            this.Philippines.Location = new System.Drawing.Point(224, 72);
             this.Philippines.Name = "Philippines";
             this.Philippines.Size = new System.Drawing.Size(114, 24);
             this.Philippines.TabIndex = 21;
@@ -248,16 +248,19 @@ namespace ContactTracing
             // 
             // select_Gender
             // 
+            this.select_Gender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.select_Gender.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.select_Gender.FormattingEnabled = true;
+            this.select_Gender.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.select_Gender.Items.AddRange(new object[] {
+            "--select gender--",
             "Female",
             "Male"});
             this.select_Gender.Location = new System.Drawing.Point(224, 296);
+            this.select_Gender.MaxDropDownItems = 3;
             this.select_Gender.Name = "select_Gender";
             this.select_Gender.Size = new System.Drawing.Size(331, 33);
             this.select_Gender.TabIndex = 15;
-            this.select_Gender.Text = "--select gender--";
             // 
             // birthDate_input
             // 
@@ -330,6 +333,7 @@ namespace ContactTracing
             this.Data_PrivacyLabel.TabIndex = 21;
             this.Data_PrivacyLabel.TabStop = true;
             this.Data_PrivacyLabel.Text = "Data Privacy Statement";
+            this.Data_PrivacyLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Data_PrivacyLabel_LinkClicked);
             // 
             // submit_Btn
             // 
@@ -430,6 +434,7 @@ namespace ContactTracing
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contact Tracing PH";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
