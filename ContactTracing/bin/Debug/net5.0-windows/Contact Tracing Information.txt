@@ -1,87 +1,44 @@
-System.Windows.Forms.Label, Text: Suffix: ma
-First Name: adwa
-Middle Name: awa`
-Last Name: adwa
+Under the age of 18
+Suffix: N/A
+First Name: awd
+Middle Name: JIJ
+Last Name: IJIJI
+Gender: IJI
+Birth Date: JIJ
+Home Address: IJI
+Email: IJIJ
+Mobile Number: 090
+*******************************************************
+
+Suffix: 
+First Name: Marvic
+Middle Name: Macarubbo
+Last Name: Gabrillo
 Gender: Female
-Birth Date: adwa
-Home Address: awd
-Email: adw
-Mobile Number: 24
+Birth Date: 10/12/2001
+Home Address: Kalawaan, Pasig City
+Email: maviemacarubbo@yahoo.com
+Mobile Number: 09999637134
 *******************************************************
 
-System.Windows.Forms.Label, Text: Suffix: None
-First Name: Marvic
-Middle Name: Macarubbo
-Last Name: Gabrillo
-Gender: Babae
-Birth Date: 10/12/2001
-Home Address: Kalawaan, Pasig City
-Email: maviemacarubbo@yahoo.com
-Mobile Number: 09999637134
-*******************************************************
-Under the age of 18
-System.Windows.Forms.Label, Text: Suffix: None
-First Name: Marvic
-Middle Name: Macarubbo
-Last Name: Gabrillo
-Gender: Babae
-Birth Date: 10/12/2001
-Home Address: Kalawaan, Pasig City
-Email: maviemacarubbo@yahoo.com
-Mobile Number: 09999637134
-*******************************************************
-Under the age of 18
-System.Windows.Forms.Label, Text: Suffix: None
-First Name: Marvic
-Middle Name: Macarubbo
-Last Name: Gabrillo
-Gender: Babae
-Birth Date: 10/12/2001
-Home Address: Kalawaan, Pasig City
-Email: maviemacarubbo@yahoo.com
-Mobile Number: 09999637134
-*******************************************************
-Under the age of 18
-System.Windows.Forms.Label, Text: Suffix: 
-First Name: wda
-Middle Name: iji
-Last Name: jnwi
-Gender: a
-Birth Date: ijw
-Home Address: ijiw
-Email: ij
-Mobile Number: 293
-*******************************************************
-Under the age of 18
-System.Windows.Forms.Label, Text: Suffix: 
-First Name: wda
-Middle Name: iji
-Last Name: jnwi
-Gender: a
-Birth Date: ijw
-Home Address: ijiw
-Email: ij
-Mobile Number: 293
-*******************************************************
-Under the age of 18
-System.Windows.Forms.Label, Text: Suffix: 
-First Name: wda
-Middle Name: iji
-Last Name: jnwi
-Gender: a
-Birth Date: ijw
-Home Address: ijiw
-Email: ij
-Mobile Number: 293
+Suffix: 
+First Name: qeq
+Middle Name: jij
+Last Name: ijo
+Gender: ij
+Birth Date: iji
+Home Address: ji
+Email: ji
+Mobile Number: 09
 *******************************************************
 
-System.Windows.Forms.Label, Text: Suffix: 
-First Name: ef
-Middle Name: oo
-Last Name: ijifj
-Gender: ok
-Birth Date: ijo
-Home Address: oko
-Email: oko
+Suffix: N/A
+First Name: ij
+Middle Name: ji
+Last Name: iji
+Gender: ji
+Birth Date: ji
+Home Address: jij
+Email: ij
 Mobile Number: 09
 *******************************************************

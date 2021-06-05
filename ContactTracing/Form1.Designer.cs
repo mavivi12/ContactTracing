@@ -30,7 +30,7 @@ namespace ContactTracing
         private void InitializeComponent()
         {
             this.ContactTracingLabel = new System.Windows.Forms.Label();
-            this.Philippines = new System.Windows.Forms.Label();
+            this.PHLabel = new System.Windows.Forms.Label();
             this.Check_ifMinor = new System.Windows.Forms.CheckBox();
             this.SuffixNameLabel = new System.Windows.Forms.Label();
             this.FirstNameLabel = new System.Windows.Forms.Label();
@@ -61,29 +61,27 @@ namespace ContactTracing
             // 
             // ContactTracingLabel
             // 
-            this.ContactTracingLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ContactTracingLabel.AutoSize = true;
-            this.ContactTracingLabel.BackColor = System.Drawing.Color.Transparent;
-            this.ContactTracingLabel.Font = new System.Drawing.Font("Quicksand", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ContactTracingLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.ContactTracingLabel.Location = new System.Drawing.Point(64, 5);
+            this.ContactTracingLabel.Enabled = false;
+            this.ContactTracingLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ContactTracingLabel.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ContactTracingLabel.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.ContactTracingLabel.Location = new System.Drawing.Point(33, 13);
             this.ContactTracingLabel.Name = "ContactTracingLabel";
-            this.ContactTracingLabel.Size = new System.Drawing.Size(446, 80);
-            this.ContactTracingLabel.TabIndex = 0;
+            this.ContactTracingLabel.Size = new System.Drawing.Size(526, 77);
+            this.ContactTracingLabel.TabIndex = 28;
             this.ContactTracingLabel.Text = "Contact Tracing";
-            this.ContactTracingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Philippines
+            // PHLabel
             // 
-            this.Philippines.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Philippines.AutoSize = true;
-            this.Philippines.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Philippines.ForeColor = System.Drawing.Color.Navy;
-            this.Philippines.Location = new System.Drawing.Point(224, 72);
-            this.Philippines.Name = "Philippines";
-            this.Philippines.Size = new System.Drawing.Size(114, 24);
-            this.Philippines.TabIndex = 21;
-            this.Philippines.Text = "PHILIPPINES";
+            this.PHLabel.AutoSize = true;
+            this.PHLabel.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.PHLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.PHLabel.Location = new System.Drawing.Point(388, 78);
+            this.PHLabel.Name = "PHLabel";
+            this.PHLabel.Size = new System.Drawing.Size(113, 23);
+            this.PHLabel.TabIndex = 29;
+            this.PHLabel.Text = "Philippines";
             // 
             // Check_ifMinor
             // 
@@ -102,6 +100,7 @@ namespace ContactTracing
             // 
             this.SuffixNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.SuffixNameLabel.AutoSize = true;
+            this.SuffixNameLabel.Enabled = false;
             this.SuffixNameLabel.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.SuffixNameLabel.ForeColor = System.Drawing.Color.AliceBlue;
             this.SuffixNameLabel.Location = new System.Drawing.Point(49, 143);
@@ -114,6 +113,7 @@ namespace ContactTracing
             // 
             this.FirstNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.FirstNameLabel.AutoSize = true;
+            this.FirstNameLabel.Enabled = false;
             this.FirstNameLabel.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FirstNameLabel.ForeColor = System.Drawing.Color.AliceBlue;
             this.FirstNameLabel.Location = new System.Drawing.Point(49, 180);
@@ -126,6 +126,7 @@ namespace ContactTracing
             // 
             this.MiddleNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.MiddleNameLabel.AutoSize = true;
+            this.MiddleNameLabel.Enabled = false;
             this.MiddleNameLabel.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.MiddleNameLabel.ForeColor = System.Drawing.Color.AliceBlue;
             this.MiddleNameLabel.Location = new System.Drawing.Point(49, 219);
@@ -138,6 +139,7 @@ namespace ContactTracing
             // 
             this.LastNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LastNameLabel.AutoSize = true;
+            this.LastNameLabel.Enabled = false;
             this.LastNameLabel.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LastNameLabel.ForeColor = System.Drawing.Color.AliceBlue;
             this.LastNameLabel.Location = new System.Drawing.Point(49, 257);
@@ -150,6 +152,7 @@ namespace ContactTracing
             // 
             this.GenderLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.GenderLabel.AutoSize = true;
+            this.GenderLabel.Enabled = false;
             this.GenderLabel.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.GenderLabel.ForeColor = System.Drawing.Color.AliceBlue;
             this.GenderLabel.Location = new System.Drawing.Point(49, 297);
@@ -162,6 +165,7 @@ namespace ContactTracing
             // 
             this.BirthdateLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.BirthdateLabel.AutoSize = true;
+            this.BirthdateLabel.Enabled = false;
             this.BirthdateLabel.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BirthdateLabel.ForeColor = System.Drawing.Color.AliceBlue;
             this.BirthdateLabel.Location = new System.Drawing.Point(49, 337);
@@ -174,6 +178,7 @@ namespace ContactTracing
             // 
             this.HomeAddressLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.HomeAddressLabel.AutoSize = true;
+            this.HomeAddressLabel.Enabled = false;
             this.HomeAddressLabel.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.HomeAddressLabel.ForeColor = System.Drawing.Color.AliceBlue;
             this.HomeAddressLabel.Location = new System.Drawing.Point(49, 373);
@@ -186,6 +191,7 @@ namespace ContactTracing
             // 
             this.EmailLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.EmailLabel.AutoSize = true;
+            this.EmailLabel.Enabled = false;
             this.EmailLabel.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.EmailLabel.ForeColor = System.Drawing.Color.AliceBlue;
             this.EmailLabel.Location = new System.Drawing.Point(49, 412);
@@ -198,6 +204,7 @@ namespace ContactTracing
             // 
             this.MobileNumberLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.MobileNumberLabel.AutoSize = true;
+            this.MobileNumberLabel.Enabled = false;
             this.MobileNumberLabel.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.MobileNumberLabel.ForeColor = System.Drawing.Color.AliceBlue;
             this.MobileNumberLabel.Location = new System.Drawing.Point(49, 450);
@@ -394,14 +401,14 @@ namespace ContactTracing
             // 
             // saveFile
             // 
-            this.saveFile.Filter = "All Files|*.txt";
+            this.saveFile.DefaultExt = "txt";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(595, 592);
+            this.ClientSize = new System.Drawing.Size(595, 606);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.cancel_Btn);
             this.Controls.Add(this.submit_Btn);
@@ -427,10 +434,12 @@ namespace ContactTracing
             this.Controls.Add(this.FirstNameLabel);
             this.Controls.Add(this.SuffixNameLabel);
             this.Controls.Add(this.Check_ifMinor);
-            this.Controls.Add(this.Philippines);
+            this.Controls.Add(this.PHLabel);
             this.Controls.Add(this.ContactTracingLabel);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.MaximizeBox = false;
             this.Name = "Form1";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contact Tracing PH";
             this.TopMost = true;
@@ -441,9 +450,8 @@ namespace ContactTracing
         }
 
         #endregion
-
         private System.Windows.Forms.Label ContactTracingLabel;
-        private System.Windows.Forms.Label Philippines;
+        private System.Windows.Forms.Label PHLabel;
         private System.Windows.Forms.CheckBox Check_ifMinor;
         private System.Windows.Forms.Label SuffixNameLabel;
         private System.Windows.Forms.Label FirstNameLabel;

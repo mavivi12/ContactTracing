@@ -18,27 +18,6 @@ namespace ContactTracing
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            select_Gender.SelectedIndex = 0;
-        }
-
-        private void MobileNumber_input_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((!char.IsNumber(e.KeyChar)) && (!char.IsControl(e.KeyChar)))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void Data_PrivacyLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            MessageBox.Show("The developer respects your individual privacy and protects any personal" +
-                " information that youshare with this contact tracing application. We commit to secure" +
-                " the individual's right to privacy and ensure the credibility of procesing of individual's" +
-                " personal information", "DATA PRIVACY STATEMENT");
-        }
-
         private void Submit_Btn_Click(object sender, EventArgs e)
         {
             String minor = "";
@@ -47,6 +26,11 @@ namespace ContactTracing
             {
                 minor += "Under the age of 18";
 
+            }
+
+            if (suffix_input.Text == "")
+            {
+                suffix_input.Text = "N/A";
             }
 
             if (checkAgree.CheckState != CheckState.Checked)
@@ -58,7 +42,7 @@ namespace ContactTracing
                 StreamWriter outputFile;
                 outputFile = File.AppendText("Contact Tracing Information.txt");
                 outputFile.WriteLine(minor);
-                outputFile.WriteLine(SuffixNameLabel + ": " + suffix_input.Text);
+                outputFile.WriteLine(SuffixNameLabel.Text + ": " + suffix_input.Text);
                 outputFile.WriteLine(FirstNameLabel.Text + ": " + firstName_input.Text);
                 outputFile.WriteLine(MiddleNameLabel.Text + ": " + lastName_input.Text);
                 outputFile.WriteLine(LastNameLabel.Text + ": " + middleName_input.Text);
@@ -75,6 +59,27 @@ namespace ContactTracing
                 MessageBox.Show(inputFile.ReadToEnd());
                 inputFile.Close();
             }
+        }
+
+        private void MobileNumber_input_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((!char.IsNumber(e.KeyChar)) && (!char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            select_Gender.SelectedIndex = 0;
+        }
+
+        private void Data_PrivacyLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("The developer respects your individual privacy and protects any personal" +
+                " information that youshare with this contact tracing application. We commit to secure" +
+                " the individual's right to privacy and ensure the credibility of procesing of individual's" +
+                " personal information", "DATA PRIVACY STATEMENT");
         }
 
         private void Cancel_Btn_Click(object sender, EventArgs e)
