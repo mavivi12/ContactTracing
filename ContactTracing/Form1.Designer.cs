@@ -30,11 +30,12 @@ namespace ContactTracing
         private void InitializeComponent()
         {
             this.ContactTracingLabel = new System.Windows.Forms.Label();
+            this.Philippines = new System.Windows.Forms.Label();
+            this.Check_ifMinor = new System.Windows.Forms.CheckBox();
+            this.SuffixNameLabel = new System.Windows.Forms.Label();
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.MiddleNameLabel = new System.Windows.Forms.Label();
             this.LastNameLabel = new System.Windows.Forms.Label();
-            this.SuffixNameLabel = new System.Windows.Forms.Label();
-            this.Check_ifMinor = new System.Windows.Forms.CheckBox();
             this.GenderLabel = new System.Windows.Forms.Label();
             this.BirthdateLabel = new System.Windows.Forms.Label();
             this.HomeAddressLabel = new System.Windows.Forms.Label();
@@ -42,16 +43,16 @@ namespace ContactTracing
             this.MobileNumberLabel = new System.Windows.Forms.Label();
             this.suffix_input = new System.Windows.Forms.TextBox();
             this.firstName_input = new System.Windows.Forms.TextBox();
-            this.middleName_input = new System.Windows.Forms.TextBox();
             this.lastName_input = new System.Windows.Forms.TextBox();
+            this.middleName_input = new System.Windows.Forms.TextBox();
             this.select_Gender = new System.Windows.Forms.ComboBox();
             this.birthDate_input = new System.Windows.Forms.TextBox();
             this.homeAddress_input = new System.Windows.Forms.TextBox();
             this.email_input = new System.Windows.Forms.TextBox();
             this.mobileNumber_input = new System.Windows.Forms.TextBox();
-            this.Philippines = new System.Windows.Forms.Label();
-            this.DataPrivacy_Agree = new System.Windows.Forms.CheckBox();
-            this.dataPrivacy = new System.Windows.Forms.Label();
+            this.checkAgree = new System.Windows.Forms.CheckBox();
+            this.iAgreeLabel = new System.Windows.Forms.Label();
+            this.Data_PrivacyLabel = new System.Windows.Forms.LinkLabel();
             this.submit_Btn = new System.Windows.Forms.Button();
             this.cancel_Btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -91,7 +92,7 @@ namespace ContactTracing
             this.Check_ifMinor.Location = new System.Drawing.Point(33, 111);
             this.Check_ifMinor.Name = "Check_ifMinor";
             this.Check_ifMinor.Size = new System.Drawing.Size(270, 28);
-            this.Check_ifMinor.TabIndex = 5;
+            this.Check_ifMinor.TabIndex = 10;
             this.Check_ifMinor.Text = "Check if filling up for a minor";
             this.Check_ifMinor.UseVisualStyleBackColor = true;
             // 
@@ -223,16 +224,6 @@ namespace ContactTracing
             this.firstName_input.Size = new System.Drawing.Size(331, 32);
             this.firstName_input.TabIndex = 12;
             // 
-            // middleName_input
-            // 
-            this.middleName_input.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.middleName_input.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.middleName_input.Location = new System.Drawing.Point(224, 218);
-            this.middleName_input.Name = "middleName_input";
-            this.middleName_input.PlaceholderText = "Middle Name";
-            this.middleName_input.Size = new System.Drawing.Size(331, 32);
-            this.middleName_input.TabIndex = 14;
-            // 
             // lastName_input
             // 
             this.lastName_input.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -241,21 +232,30 @@ namespace ContactTracing
             this.lastName_input.Name = "lastName_input";
             this.lastName_input.PlaceholderText = "Last Name";
             this.lastName_input.Size = new System.Drawing.Size(331, 32);
-            this.lastName_input.TabIndex = 13;
+            this.lastName_input.TabIndex = 14;
+            // 
+            // middleName_input
+            // 
+            this.middleName_input.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.middleName_input.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.middleName_input.Location = new System.Drawing.Point(224, 218);
+            this.middleName_input.Name = "middleName_input";
+            this.middleName_input.PlaceholderText = "Middle Name";
+            this.middleName_input.Size = new System.Drawing.Size(331, 32);
+            this.middleName_input.TabIndex = 13;
             // 
             // select_Gender
             // 
-            this.select_Gender.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.select_Gender.Font = new System.Drawing.Font("Quicksand", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.select_Gender.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.select_Gender.FormattingEnabled = true;
             this.select_Gender.Items.AddRange(new object[] {
             "Female",
             "Male"});
-            this.select_Gender.Location = new System.Drawing.Point(224, 294);
+            this.select_Gender.Location = new System.Drawing.Point(224, 296);
             this.select_Gender.Name = "select_Gender";
-            this.select_Gender.Size = new System.Drawing.Size(331, 36);
-            this.select_Gender.TabIndex = 16;
-            this.select_Gender.Text = "-- select gender --";
+            this.select_Gender.Size = new System.Drawing.Size(331, 33);
+            this.select_Gender.TabIndex = 15;
+            this.select_Gender.Text = "--select gender--";
             // 
             // birthDate_input
             // 
@@ -265,7 +265,7 @@ namespace ContactTracing
             this.birthDate_input.Name = "birthDate_input";
             this.birthDate_input.PlaceholderText = "MM/DD/YYYY";
             this.birthDate_input.Size = new System.Drawing.Size(331, 32);
-            this.birthDate_input.TabIndex = 17;
+            this.birthDate_input.TabIndex = 16;
             // 
             // homeAddress_input
             // 
@@ -275,7 +275,7 @@ namespace ContactTracing
             this.homeAddress_input.Name = "homeAddress_input";
             this.homeAddress_input.PlaceholderText = "Home Address";
             this.homeAddress_input.Size = new System.Drawing.Size(331, 32);
-            this.homeAddress_input.TabIndex = 18;
+            this.homeAddress_input.TabIndex = 17;
             // 
             // email_input
             // 
@@ -285,7 +285,7 @@ namespace ContactTracing
             this.email_input.Name = "email_input";
             this.email_input.PlaceholderText = "Email";
             this.email_input.Size = new System.Drawing.Size(331, 32);
-            this.email_input.TabIndex = 19;
+            this.email_input.TabIndex = 18;
             // 
             // mobileNumber_input
             // 
@@ -295,30 +295,38 @@ namespace ContactTracing
             this.mobileNumber_input.Name = "mobileNumber_input";
             this.mobileNumber_input.PlaceholderText = "Mobile Number (0999) 999 9999";
             this.mobileNumber_input.Size = new System.Drawing.Size(331, 32);
-            this.mobileNumber_input.TabIndex = 20;
+            this.mobileNumber_input.TabIndex = 19;
             // 
-            // DataPrivacy_Agree
+            // checkAgree
             // 
-            this.DataPrivacy_Agree.AutoSize = true;
-            this.DataPrivacy_Agree.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.DataPrivacy_Agree.Location = new System.Drawing.Point(49, 498);
-            this.DataPrivacy_Agree.Name = "DataPrivacy_Agree";
-            this.DataPrivacy_Agree.Size = new System.Drawing.Size(104, 28);
-            this.DataPrivacy_Agree.TabIndex = 22;
-            this.DataPrivacy_Agree.Text = "I Agree to ";
-            this.DataPrivacy_Agree.UseVisualStyleBackColor = true;
+            this.checkAgree.AutoSize = true;
+            this.checkAgree.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkAgree.Location = new System.Drawing.Point(54, 500);
+            this.checkAgree.Name = "checkAgree";
+            this.checkAgree.Size = new System.Drawing.Size(15, 14);
+            this.checkAgree.TabIndex = 20;
+            this.checkAgree.UseVisualStyleBackColor = true;
             // 
-            // dataPrivacy
+            // iAgreeLabel
             // 
-            this.dataPrivacy.AutoSize = true;
-            this.dataPrivacy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataPrivacy.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.dataPrivacy.ForeColor = System.Drawing.Color.Navy;
-            this.dataPrivacy.Location = new System.Drawing.Point(142, 498);
-            this.dataPrivacy.Name = "dataPrivacy";
-            this.dataPrivacy.Size = new System.Drawing.Size(185, 24);
-            this.dataPrivacy.TabIndex = 23;
-            this.dataPrivacy.Text = "Data Privacy Statement";
+            this.iAgreeLabel.AutoSize = true;
+            this.iAgreeLabel.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iAgreeLabel.Location = new System.Drawing.Point(75, 494);
+            this.iAgreeLabel.Name = "iAgreeLabel";
+            this.iAgreeLabel.Size = new System.Drawing.Size(81, 24);
+            this.iAgreeLabel.TabIndex = 26;
+            this.iAgreeLabel.Text = "I Agree to";
+            // 
+            // Data_PrivacyLabel
+            // 
+            this.Data_PrivacyLabel.AutoSize = true;
+            this.Data_PrivacyLabel.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Data_PrivacyLabel.Location = new System.Drawing.Point(153, 494);
+            this.Data_PrivacyLabel.Name = "Data_PrivacyLabel";
+            this.Data_PrivacyLabel.Size = new System.Drawing.Size(185, 24);
+            this.Data_PrivacyLabel.TabIndex = 21;
+            this.Data_PrivacyLabel.TabStop = true;
+            this.Data_PrivacyLabel.Text = "Data Privacy Statement";
             // 
             // submit_Btn
             // 
@@ -331,7 +339,7 @@ namespace ContactTracing
             this.submit_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.submit_Btn.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.submit_Btn.ForeColor = System.Drawing.Color.White;
-            this.submit_Btn.Location = new System.Drawing.Point(78, 532);
+            this.submit_Btn.Location = new System.Drawing.Point(75, 538);
             this.submit_Btn.Name = "submit_Btn";
             this.submit_Btn.Size = new System.Drawing.Size(91, 38);
             this.submit_Btn.TabIndex = 24;
@@ -350,12 +358,13 @@ namespace ContactTracing
             this.cancel_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cancel_Btn.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cancel_Btn.ForeColor = System.Drawing.Color.White;
-            this.cancel_Btn.Location = new System.Drawing.Point(189, 532);
+            this.cancel_Btn.Location = new System.Drawing.Point(187, 538);
             this.cancel_Btn.Name = "cancel_Btn";
             this.cancel_Btn.Size = new System.Drawing.Size(91, 38);
             this.cancel_Btn.TabIndex = 25;
             this.cancel_Btn.Text = "Cancel";
             this.cancel_Btn.UseVisualStyleBackColor = false;
+            this.cancel_Btn.Click += new System.EventHandler(this.Cancel_Btn_Click);
             // 
             // Form1
             // 
@@ -365,9 +374,9 @@ namespace ContactTracing
             this.ClientSize = new System.Drawing.Size(595, 592);
             this.Controls.Add(this.cancel_Btn);
             this.Controls.Add(this.submit_Btn);
-            this.Controls.Add(this.dataPrivacy);
-            this.Controls.Add(this.DataPrivacy_Agree);
-            this.Controls.Add(this.Philippines);
+            this.Controls.Add(this.Data_PrivacyLabel);
+            this.Controls.Add(this.iAgreeLabel);
+            this.Controls.Add(this.checkAgree);
             this.Controls.Add(this.mobileNumber_input);
             this.Controls.Add(this.email_input);
             this.Controls.Add(this.homeAddress_input);
@@ -382,11 +391,12 @@ namespace ContactTracing
             this.Controls.Add(this.HomeAddressLabel);
             this.Controls.Add(this.BirthdateLabel);
             this.Controls.Add(this.GenderLabel);
-            this.Controls.Add(this.Check_ifMinor);
-            this.Controls.Add(this.SuffixNameLabel);
             this.Controls.Add(this.LastNameLabel);
             this.Controls.Add(this.MiddleNameLabel);
             this.Controls.Add(this.FirstNameLabel);
+            this.Controls.Add(this.SuffixNameLabel);
+            this.Controls.Add(this.Check_ifMinor);
+            this.Controls.Add(this.Philippines);
             this.Controls.Add(this.ContactTracingLabel);
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -414,15 +424,16 @@ namespace ContactTracing
         private System.Windows.Forms.Label MobileNumberLabel;
         private System.Windows.Forms.TextBox suffix_input;
         private System.Windows.Forms.TextBox firstName_input;
-        private System.Windows.Forms.TextBox middleName_input;
         private System.Windows.Forms.TextBox lastName_input;
+        private System.Windows.Forms.TextBox middleName_input;
         private System.Windows.Forms.ComboBox select_Gender;
         private System.Windows.Forms.TextBox birthDate_input;
         private System.Windows.Forms.TextBox homeAddress_input;
         private System.Windows.Forms.TextBox email_input;
         private System.Windows.Forms.TextBox mobileNumber_input;
-        private System.Windows.Forms.CheckBox DataPrivacy_Agree;
-        private System.Windows.Forms.Label dataPrivacy;
+        private System.Windows.Forms.CheckBox checkAgree;
+        private System.Windows.Forms.Label iAgreeLabel;
+        private System.Windows.Forms.LinkLabel Data_PrivacyLabel;
         private System.Windows.Forms.Button submit_Btn;
         private System.Windows.Forms.Button cancel_Btn;
     }

@@ -21,11 +21,11 @@ namespace ContactTracing
         private void Submit_Btn_Click(object sender, EventArgs e)
         {
             StreamWriter outputFile;
-            outputFile = File.AppendText("Contact Tracing.txt");
+            outputFile = File.AppendText("Contact Tracing Information.txt");
             outputFile.WriteLine(SuffixNameLabel + ": " + suffix_input.Text);
             outputFile.WriteLine(FirstNameLabel.Text + ": " + firstName_input.Text);
-            outputFile.WriteLine(MiddleNameLabel.Text + ": " + middleName_input.Text);
-            outputFile.WriteLine(LastNameLabel.Text + ": " + lastName_input.Text);
+            outputFile.WriteLine(MiddleNameLabel.Text + ": " + lastName_input.Text);
+            outputFile.WriteLine(LastNameLabel.Text + ": " + middleName_input.Text);
             outputFile.WriteLine(GenderLabel.Text + ": " + select_Gender.Text);
             outputFile.WriteLine(BirthdateLabel.Text + ": " + birthDate_input.Text);
             outputFile.WriteLine(HomeAddressLabel.Text + ": " + homeAddress_input.Text);
@@ -35,9 +35,14 @@ namespace ContactTracing
             outputFile.Close();
 
             StreamReader inputFile;
-            inputFile = File.OpenText("Contact Tracing.txt");
+            inputFile = File.OpenText("Contact Tracing Information.txt");
             MessageBox.Show(inputFile.ReadToEnd());
             inputFile.Close();
+        }
+
+        private void Cancel_Btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
