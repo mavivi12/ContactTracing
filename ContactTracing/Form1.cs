@@ -28,24 +28,40 @@ namespace ContactTracing
 
         private void Submit_Btn_Click(object sender, EventArgs e)
         {
-            StreamWriter outputFile;
-            outputFile = File.AppendText("Contact Tracing Information.txt");
-            outputFile.WriteLine(SuffixNameLabel + ": " + suffix_input.Text);
-            outputFile.WriteLine(FirstNameLabel.Text + ": " + firstName_input.Text);
-            outputFile.WriteLine(MiddleNameLabel.Text + ": " + lastName_input.Text);
-            outputFile.WriteLine(LastNameLabel.Text + ": " + middleName_input.Text);
-            outputFile.WriteLine(GenderLabel.Text + ": " + select_Gender.Text);
-            outputFile.WriteLine(BirthdateLabel.Text + ": " + birthDate_input.Text);
-            outputFile.WriteLine(HomeAddressLabel.Text + ": " + homeAddress_input.Text);
-            outputFile.WriteLine(EmailLabel.Text + ": " + email_input.Text);
-            outputFile.WriteLine(MobileNumberLabel.Text + ": " + mobileNumber_input.Text);
-            outputFile.WriteLine("*******************************************************");
-            outputFile.Close();
+            String minor = "";
 
-            StreamReader inputFile;
-            inputFile = File.OpenText("Contact Tracing Information.txt");
-            MessageBox.Show(inputFile.ReadToEnd());
-            inputFile.Close();
+            if (Check_ifMinor.Checked)
+            {
+                minor += "Under the age of 18";
+
+            }
+
+            if (checkAgree.CheckState != CheckState.Checked)
+            {
+                MessageBox.Show("You must agree to Data Privacy Statement");
+            }
+            else
+            {
+                StreamWriter outputFile;
+                outputFile = File.AppendText("Contact Tracing Information.txt");
+                outputFile.WriteLine(minor);
+                outputFile.WriteLine(SuffixNameLabel + ": " + suffix_input.Text);
+                outputFile.WriteLine(FirstNameLabel.Text + ": " + firstName_input.Text);
+                outputFile.WriteLine(MiddleNameLabel.Text + ": " + lastName_input.Text);
+                outputFile.WriteLine(LastNameLabel.Text + ": " + middleName_input.Text);
+                outputFile.WriteLine(GenderLabel.Text + ": " + select_Gender.Text);
+                outputFile.WriteLine(BirthdateLabel.Text + ": " + birthDate_input.Text);
+                outputFile.WriteLine(HomeAddressLabel.Text + ": " + homeAddress_input.Text);
+                outputFile.WriteLine(EmailLabel.Text + ": " + email_input.Text);
+                outputFile.WriteLine(MobileNumberLabel.Text + ": " + mobileNumber_input.Text);
+                outputFile.WriteLine("*******************************************************");
+                outputFile.Close();
+
+                StreamReader inputFile;
+                inputFile = File.OpenText("Contact Tracing Information.txt");
+                MessageBox.Show(inputFile.ReadToEnd());
+                inputFile.Close();
+            }
         }
 
         private void Cancel_Btn_Click(object sender, EventArgs e)
