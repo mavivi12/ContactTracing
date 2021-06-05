@@ -24,7 +24,7 @@ namespace ContactTracing
 
             if (Check_ifMinor.Checked)
             {
-                minor += "Under the age of 18";
+                minor = "Under the age of 18";
 
             }
 
@@ -40,7 +40,7 @@ namespace ContactTracing
             else
             {
                 StreamWriter outputFile;
-                outputFile = File.AppendText("Contact Tracing Information.txt");
+                outputFile = File.CreateText("Contact Tracing Information.txt");
                 outputFile.WriteLine(minor);
                 outputFile.WriteLine(SuffixNameLabel.Text + ": " + suffix_input.Text);
                 outputFile.WriteLine(FirstNameLabel.Text + ": " + firstName_input.Text);
@@ -87,9 +87,19 @@ namespace ContactTracing
             this.Close();
         }
 
-        private void SaveBtn_Click(object sender, EventArgs e)
+        private void SubmitAnotherLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
+            Check_ifMinor.Checked = false;
+            suffix_input.Clear();
+            firstName_input.Clear();
+            middleName_input.Clear();
+            lastName_input.Clear();
+            select_Gender.SelectedIndex = 0;
+            birthDate_input.Clear();
+            homeAddress_input.Clear();
+            email_input.Clear();
+            mobileNumber_input.Clear();
+            checkAgree.Checked = false;
         }
     }
 }

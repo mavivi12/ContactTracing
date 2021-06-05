@@ -1,44 +1,11 @@
 Under the age of 18
-Suffix: N/A
-First Name: awd
-Middle Name: JIJ
-Last Name: IJIJI
-Gender: IJI
-Birth Date: JIJ
-Home Address: IJI
-Email: IJIJ
-Mobile Number: 090
-*******************************************************
-
-Suffix: 
-First Name: Marvic
-Middle Name: Macarubbo
-Last Name: Gabrillo
-Gender: Female
-Birth Date: 10/12/2001
-Home Address: Kalawaan, Pasig City
-Email: maviemacarubbo@yahoo.com
-Mobile Number: 09999637134
-*******************************************************
-
-Suffix: 
-First Name: qeq
+Suffix: adw
+First Name: jiji
 Middle Name: jij
-Last Name: ijo
-Gender: ij
-Birth Date: iji
-Home Address: ji
-Email: ji
-Mobile Number: 09
-*******************************************************
-
-Suffix: N/A
-First Name: ij
-Middle Name: ji
 Last Name: iji
-Gender: ji
-Birth Date: ji
-Home Address: jij
-Email: ij
+Gender: Male
+Birth Date: kok
+Home Address: koko
+Email: kok
 Mobile Number: 09
 *******************************************************
