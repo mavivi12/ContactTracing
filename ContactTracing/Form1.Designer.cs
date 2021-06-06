@@ -29,6 +29,7 @@ namespace ContactTracing
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.select_Gender = new System.Windows.Forms.ComboBox();
             this.ContactTracingLabel = new System.Windows.Forms.Label();
             this.PHLabel = new System.Windows.Forms.Label();
@@ -441,9 +442,9 @@ namespace ContactTracing
             this.Controls.Add(this.PHLabel);
             this.Controls.Add(this.ContactTracingLabel);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contact Tracing PH";
             this.TopMost = true;
