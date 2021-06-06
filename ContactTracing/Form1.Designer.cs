@@ -357,7 +357,7 @@ namespace ContactTracing
             this.submit_Btn.Name = "submit_Btn";
             this.submit_Btn.Size = new System.Drawing.Size(91, 38);
             this.submit_Btn.TabIndex = 24;
-            this.submit_Btn.Text = "Submit";
+            this.submit_Btn.Text = "&Submit";
             this.submit_Btn.UseVisualStyleBackColor = false;
             this.submit_Btn.Click += new System.EventHandler(this.Submit_Btn_Click);
             // 
@@ -376,7 +376,7 @@ namespace ContactTracing
             this.cancel_Btn.Name = "cancel_Btn";
             this.cancel_Btn.Size = new System.Drawing.Size(91, 38);
             this.cancel_Btn.TabIndex = 25;
-            this.cancel_Btn.Text = "Cancel";
+            this.cancel_Btn.Text = "&Cancel";
             this.cancel_Btn.UseVisualStyleBackColor = false;
             this.cancel_Btn.Click += new System.EventHandler(this.Cancel_Btn_Click);
             // 

@@ -35,7 +35,7 @@ namespace ContactTracing
 
             if (checkAgree.CheckState != CheckState.Checked)
             {
-                MessageBox.Show("You must agree to Data Privacy Statement");
+                MessageBox.Show("You must agree to Data Privacy Statement.");
             }
             else
             {
@@ -94,7 +94,7 @@ namespace ContactTracing
             MessageBox.Show("The developer respects your individual privacy and protects any personal" +
                 " information that youshare with this contact tracing application. We commit to secure" +
                 " the individual's right to privacy and ensure the credibility of procesing of individual's" +
-                " personal information", "DATA PRIVACY STATEMENT");
+                " personal information.", "DATA PRIVACY STATEMENT");
         }
 
         private void Cancel_Btn_Click(object sender, EventArgs e)
