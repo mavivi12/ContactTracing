@@ -13,6 +13,8 @@ namespace ContactTracing
 {
     public partial class Form2 : Form
     {
+        int attempt = 0;
+
         public Form2()
         {
             InitializeComponent();
@@ -30,47 +32,23 @@ namespace ContactTracing
                 MessageBox.Show(allinfo.ReadToEnd());
                 allinfo.Close();
             }
+            else if ((username_input.Text == "") || (password_input.Text == ""))
+            {
+                MessageBox.Show("Please enter username and password.", "ACCESS DENIED");
+            }
             else
             {
-                do
+                MessageBox.Show("Incorrect username and/or password.", "ACCESS DENIED");
+
+                attempt += 1;
+                numOfAttemptLabel.Text = attempt.ToString();
+
+                if (numOfAttemptLabel.Text == "3")
                 {
-                    int attempt = 0;
-
-                    MessageBox.Show("Incorrect username or password.", "ACCESS DENIED");
-
-                    attempt++;
-                    numOfAttemptLabel.Text = attempt.ToString();
-                } while (numOfAttemptLabel.Text == "3");
-
-                if(numOfAttemptLabel.Text == "3")
-                {
-                    MessageBox.Show("Attempted 3 times!\nIncorrect username or password.\n" +
+                    MessageBox.Show("Attempted 3 times!\nIncorrect username and/or password.\n" +
                         "This program will close.", "ACCESS DENIED");
                     this.Close();
                 }
-                //do
-                //{
-                //    attempt++;
-                //    numOfAttemptLabel.Text = attempt.ToString();
-                //    MessageBox.Show("Incorrect username or password.", "ACCESS DENIED");
-
-                //    username_inp
-
-                //} while (attempt <= 2);
-
-                //if (numOfAttemptLabel.Text == "3")
-                //{
-                //    this.Close();
-                //}
-
-                ////for (attempt = 0; attempt <= 3; attempt++)
-                ////{
-                ////    numOfAttemptLabel.Text = attempt.ToString();
-                ////    MessageBox.Show("Incorrect username or password.", "ACCESS DENIED");
-
-                ////}
-
-
             }
         }
 

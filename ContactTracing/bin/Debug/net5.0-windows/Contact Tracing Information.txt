@@ -20,3 +20,14 @@ Home Address: kalawaan
 Email: aa
 Mobile Number: 1234
 *******************************************************
+
+Suffix: N/A
+First Name: 
+Middle Name: 
+Last Name: 
+Gender: --select gender--
+Birth Date: 
+Home Address: 
+Email: 
+Mobile Number: 
+*******************************************************
