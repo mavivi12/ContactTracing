@@ -1,33 +1,33 @@
 
-Suffix: N/A
-First Name: Marvic
-Middle Name: Macarubbo
-Last Name: Gabrillo
-Gender: Female
-Birth Date: 10/12/2001
-Home Address: Kalawaan, Pasig City
-Email: maviemacarubbo@yahoo.com
-Mobile Number: 09999637134
-*******************************************************
-Under the age of 18
-Suffix: III
-First Name: Maye
-Middle Name: Mac
-Last Name: G
-Gender: Female
-Birth Date: 12/12/12
-Home Address: kalawaan
-Email: aa
-Mobile Number: 1234
+Suffix: 
+*First Name: Marvic
+Middle Name: Gabrillo
+*Last Name: Macarubbo
+*Gender: Female
+*Birth Date: 10122001
+*Home Address: Pasig City
+Email: 
+*Mobile Number: (0912) 345-6789
 *******************************************************
 
-Suffix: N/A
-First Name: 
+Suffix: Sr.
+*First Name: Marc
 Middle Name: 
-Last Name: 
-Gender: --select gender--
-Birth Date: 
-Home Address: 
+*Last Name: Santos
+*Gender: Male
+*Birth Date: 12231893
+*Home Address: Quezon City
 Email: 
-Mobile Number: 
+*Mobile Number: (0999) 999-9999
+*******************************************************
+Under the age of 18
+Suffix: Jr.
+*First Name: Marc
+Middle Name: 
+*Last Name: Santos
+*Gender: Male
+*Birth Date: 12232010
+*Home Address: Quezon City
+Email: 
+*Mobile Number: (0999) 999-9999
 *******************************************************

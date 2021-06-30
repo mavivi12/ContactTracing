@@ -69,6 +69,7 @@ namespace ContactTracing
             this.username_input.Name = "username_input";
             this.username_input.Size = new System.Drawing.Size(161, 27);
             this.username_input.TabIndex = 2;
+            this.username_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Username_input_KeyDown);
             // 
             // password_input
             // 
@@ -78,6 +79,7 @@ namespace ContactTracing
             this.password_input.PasswordChar = '*';
             this.password_input.Size = new System.Drawing.Size(161, 27);
             this.password_input.TabIndex = 3;
+            this.password_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Password_input_KeyDown);
             // 
             // loginBtn
             // 

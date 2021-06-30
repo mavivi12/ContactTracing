@@ -47,10 +47,8 @@ namespace ContactTracing
             this.firstName_input = new System.Windows.Forms.TextBox();
             this.lastName_input = new System.Windows.Forms.TextBox();
             this.middleName_input = new System.Windows.Forms.TextBox();
-            this.birthDate_input = new System.Windows.Forms.TextBox();
             this.homeAddress_input = new System.Windows.Forms.TextBox();
             this.email_input = new System.Windows.Forms.TextBox();
-            this.mobileNumber_input = new System.Windows.Forms.TextBox();
             this.checkAgree = new System.Windows.Forms.CheckBox();
             this.iAgreeLabel = new System.Windows.Forms.Label();
             this.Data_PrivacyLabel = new System.Windows.Forms.LinkLabel();
@@ -58,6 +56,9 @@ namespace ContactTracing
             this.cancel_Btn = new System.Windows.Forms.Button();
             this.submitAnotherLabel = new System.Windows.Forms.LinkLabel();
             this.adminLabel = new System.Windows.Forms.LinkLabel();
+            this.mobileNumber_maskediInput = new System.Windows.Forms.MaskedTextBox();
+            this.birthDate_maskedInput = new System.Windows.Forms.MaskedTextBox();
+            this.birthDate_formatLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // select_Gender
@@ -75,6 +76,7 @@ namespace ContactTracing
             this.select_Gender.Name = "select_Gender";
             this.select_Gender.Size = new System.Drawing.Size(331, 33);
             this.select_Gender.TabIndex = 15;
+            this.select_Gender.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Select_Gender_KeyDown);
             // 
             // ContactTracingLabel
             // 
@@ -135,9 +137,9 @@ namespace ContactTracing
             this.FirstNameLabel.ForeColor = System.Drawing.Color.AliceBlue;
             this.FirstNameLabel.Location = new System.Drawing.Point(49, 180);
             this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(117, 28);
+            this.FirstNameLabel.Size = new System.Drawing.Size(124, 28);
             this.FirstNameLabel.TabIndex = 1;
-            this.FirstNameLabel.Text = "First Name";
+            this.FirstNameLabel.Text = "*First Name";
             // 
             // MiddleNameLabel
             // 
@@ -161,9 +163,9 @@ namespace ContactTracing
             this.LastNameLabel.ForeColor = System.Drawing.Color.AliceBlue;
             this.LastNameLabel.Location = new System.Drawing.Point(49, 257);
             this.LastNameLabel.Name = "LastNameLabel";
-            this.LastNameLabel.Size = new System.Drawing.Size(115, 28);
+            this.LastNameLabel.Size = new System.Drawing.Size(122, 28);
             this.LastNameLabel.TabIndex = 3;
-            this.LastNameLabel.Text = "Last Name";
+            this.LastNameLabel.Text = "*Last Name";
             // 
             // GenderLabel
             // 
@@ -174,9 +176,9 @@ namespace ContactTracing
             this.GenderLabel.ForeColor = System.Drawing.Color.AliceBlue;
             this.GenderLabel.Location = new System.Drawing.Point(49, 297);
             this.GenderLabel.Name = "GenderLabel";
-            this.GenderLabel.Size = new System.Drawing.Size(82, 28);
+            this.GenderLabel.Size = new System.Drawing.Size(89, 28);
             this.GenderLabel.TabIndex = 6;
-            this.GenderLabel.Text = "Gender";
+            this.GenderLabel.Text = "*Gender";
             // 
             // BirthdateLabel
             // 
@@ -185,11 +187,11 @@ namespace ContactTracing
             this.BirthdateLabel.Enabled = false;
             this.BirthdateLabel.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BirthdateLabel.ForeColor = System.Drawing.Color.AliceBlue;
-            this.BirthdateLabel.Location = new System.Drawing.Point(49, 337);
+            this.BirthdateLabel.Location = new System.Drawing.Point(49, 330);
             this.BirthdateLabel.Name = "BirthdateLabel";
-            this.BirthdateLabel.Size = new System.Drawing.Size(109, 28);
+            this.BirthdateLabel.Size = new System.Drawing.Size(116, 28);
             this.BirthdateLabel.TabIndex = 7;
-            this.BirthdateLabel.Text = "Birth Date";
+            this.BirthdateLabel.Text = "*Birth Date";
             // 
             // HomeAddressLabel
             // 
@@ -200,9 +202,9 @@ namespace ContactTracing
             this.HomeAddressLabel.ForeColor = System.Drawing.Color.AliceBlue;
             this.HomeAddressLabel.Location = new System.Drawing.Point(49, 373);
             this.HomeAddressLabel.Name = "HomeAddressLabel";
-            this.HomeAddressLabel.Size = new System.Drawing.Size(152, 28);
+            this.HomeAddressLabel.Size = new System.Drawing.Size(159, 28);
             this.HomeAddressLabel.TabIndex = 8;
-            this.HomeAddressLabel.Text = "Home Address";
+            this.HomeAddressLabel.Text = "*Home Address";
             // 
             // EmailLabel
             // 
@@ -226,9 +228,9 @@ namespace ContactTracing
             this.MobileNumberLabel.ForeColor = System.Drawing.Color.AliceBlue;
             this.MobileNumberLabel.Location = new System.Drawing.Point(49, 450);
             this.MobileNumberLabel.Name = "MobileNumberLabel";
-            this.MobileNumberLabel.Size = new System.Drawing.Size(158, 28);
+            this.MobileNumberLabel.Size = new System.Drawing.Size(165, 28);
             this.MobileNumberLabel.TabIndex = 10;
-            this.MobileNumberLabel.Text = "Mobile Number";
+            this.MobileNumberLabel.Text = "*Mobile Number";
             // 
             // suffix_input
             // 
@@ -239,6 +241,7 @@ namespace ContactTracing
             this.suffix_input.PlaceholderText = "Suffix(e.g Sr., Jr., III)";
             this.suffix_input.Size = new System.Drawing.Size(331, 32);
             this.suffix_input.TabIndex = 11;
+            this.suffix_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Suffix_input_KeyDown);
             // 
             // firstName_input
             // 
@@ -249,6 +252,7 @@ namespace ContactTracing
             this.firstName_input.PlaceholderText = "First Name";
             this.firstName_input.Size = new System.Drawing.Size(331, 32);
             this.firstName_input.TabIndex = 12;
+            this.firstName_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FirstName_input_KeyDown);
             // 
             // lastName_input
             // 
@@ -259,6 +263,7 @@ namespace ContactTracing
             this.lastName_input.PlaceholderText = "Last Name";
             this.lastName_input.Size = new System.Drawing.Size(331, 32);
             this.lastName_input.TabIndex = 14;
+            this.lastName_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LastName_input_KeyDown);
             // 
             // middleName_input
             // 
@@ -269,16 +274,7 @@ namespace ContactTracing
             this.middleName_input.PlaceholderText = "Middle Name";
             this.middleName_input.Size = new System.Drawing.Size(331, 32);
             this.middleName_input.TabIndex = 13;
-            // 
-            // birthDate_input
-            // 
-            this.birthDate_input.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.birthDate_input.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.birthDate_input.Location = new System.Drawing.Point(224, 336);
-            this.birthDate_input.Name = "birthDate_input";
-            this.birthDate_input.PlaceholderText = "MM/DD/YYYY";
-            this.birthDate_input.Size = new System.Drawing.Size(331, 32);
-            this.birthDate_input.TabIndex = 16;
+            this.middleName_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MiddleName_input_KeyDown);
             // 
             // homeAddress_input
             // 
@@ -289,6 +285,7 @@ namespace ContactTracing
             this.homeAddress_input.PlaceholderText = "Home Address";
             this.homeAddress_input.Size = new System.Drawing.Size(331, 32);
             this.homeAddress_input.TabIndex = 17;
+            this.homeAddress_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HomeAddress_input_KeyDown);
             // 
             // email_input
             // 
@@ -299,17 +296,7 @@ namespace ContactTracing
             this.email_input.PlaceholderText = "Email";
             this.email_input.Size = new System.Drawing.Size(331, 32);
             this.email_input.TabIndex = 18;
-            // 
-            // mobileNumber_input
-            // 
-            this.mobileNumber_input.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.mobileNumber_input.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mobileNumber_input.Location = new System.Drawing.Point(224, 449);
-            this.mobileNumber_input.Name = "mobileNumber_input";
-            this.mobileNumber_input.PlaceholderText = "Mobile Number (0999) 999 9999";
-            this.mobileNumber_input.Size = new System.Drawing.Size(331, 32);
-            this.mobileNumber_input.TabIndex = 19;
-            this.mobileNumber_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MobileNumber_input_KeyPress);
+            this.email_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Email_input_KeyDown);
             // 
             // checkAgree
             // 
@@ -407,12 +394,53 @@ namespace ContactTracing
             this.adminLabel.Text = "Access Data as ADMIN";
             this.adminLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.AdminLabel_LinkClicked);
             // 
+            // mobileNumber_maskediInput
+            // 
+            this.mobileNumber_maskediInput.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mobileNumber_maskediInput.Location = new System.Drawing.Point(224, 449);
+            this.mobileNumber_maskediInput.Mask = "(0999) 000-0000";
+            this.mobileNumber_maskediInput.Name = "mobileNumber_maskediInput";
+            this.mobileNumber_maskediInput.Size = new System.Drawing.Size(331, 32);
+            this.mobileNumber_maskediInput.TabIndex = 19;
+            this.mobileNumber_maskediInput.Text = "09";
+            this.mobileNumber_maskediInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MobileNumber_maskediInput_KeyDown);
+            // 
+            // birthDate_maskedInput
+            // 
+            this.birthDate_maskedInput.BeepOnError = true;
+            this.birthDate_maskedInput.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.birthDate_maskedInput.Location = new System.Drawing.Point(224, 335);
+            this.birthDate_maskedInput.Mask = "00/00/0000";
+            this.birthDate_maskedInput.Name = "birthDate_maskedInput";
+            this.birthDate_maskedInput.PromptChar = '-';
+            this.birthDate_maskedInput.Size = new System.Drawing.Size(331, 32);
+            this.birthDate_maskedInput.TabIndex = 16;
+            this.birthDate_maskedInput.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.birthDate_maskedInput.ValidatingType = typeof(System.DateTime);
+            this.birthDate_maskedInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BirthDate_maskedInput_KeyDown);
+            // 
+            // birthDate_formatLabel
+            // 
+            this.birthDate_formatLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.birthDate_formatLabel.AutoSize = true;
+            this.birthDate_formatLabel.Enabled = false;
+            this.birthDate_formatLabel.Font = new System.Drawing.Font("Quicksand", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.birthDate_formatLabel.ForeColor = System.Drawing.Color.AliceBlue;
+            this.birthDate_formatLabel.Location = new System.Drawing.Point(50, 352);
+            this.birthDate_formatLabel.Name = "birthDate_formatLabel";
+            this.birthDate_formatLabel.Size = new System.Drawing.Size(106, 18);
+            this.birthDate_formatLabel.TabIndex = 34;
+            this.birthDate_formatLabel.Text = "(MM/DD/YYYY)";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(595, 606);
+            this.Controls.Add(this.birthDate_formatLabel);
+            this.Controls.Add(this.birthDate_maskedInput);
+            this.Controls.Add(this.mobileNumber_maskediInput);
             this.Controls.Add(this.adminLabel);
             this.Controls.Add(this.submitAnotherLabel);
             this.Controls.Add(this.cancel_Btn);
@@ -420,10 +448,8 @@ namespace ContactTracing
             this.Controls.Add(this.Data_PrivacyLabel);
             this.Controls.Add(this.iAgreeLabel);
             this.Controls.Add(this.checkAgree);
-            this.Controls.Add(this.mobileNumber_input);
             this.Controls.Add(this.email_input);
             this.Controls.Add(this.homeAddress_input);
-            this.Controls.Add(this.birthDate_input);
             this.Controls.Add(this.select_Gender);
             this.Controls.Add(this.middleName_input);
             this.Controls.Add(this.lastName_input);
@@ -463,6 +489,7 @@ namespace ContactTracing
         private System.Windows.Forms.Label LastNameLabel;
         private System.Windows.Forms.Label GenderLabel;
         private System.Windows.Forms.Label BirthdateLabel;
+        private System.Windows.Forms.Label birthDate_formatLabel;
         private System.Windows.Forms.Label HomeAddressLabel;
         private System.Windows.Forms.Label EmailLabel;
         private System.Windows.Forms.Label MobileNumberLabel;
@@ -471,10 +498,10 @@ namespace ContactTracing
         private System.Windows.Forms.TextBox lastName_input;
         private System.Windows.Forms.TextBox middleName_input;
         private System.Windows.Forms.ComboBox select_Gender;
-        private System.Windows.Forms.TextBox birthDate_input;
+        private System.Windows.Forms.MaskedTextBox birthDate_maskedInput;
         private System.Windows.Forms.TextBox homeAddress_input;
         private System.Windows.Forms.TextBox email_input;
-        private System.Windows.Forms.TextBox mobileNumber_input;
+        private System.Windows.Forms.MaskedTextBox mobileNumber_maskediInput;
         private System.Windows.Forms.CheckBox checkAgree;
         private System.Windows.Forms.Label iAgreeLabel;
         private System.Windows.Forms.LinkLabel Data_PrivacyLabel;

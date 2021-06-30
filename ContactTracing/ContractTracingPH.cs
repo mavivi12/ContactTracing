@@ -18,22 +18,97 @@ namespace ContactTracing
             InitializeComponent();
         }
 
+        public void Form1_Load(object sender, EventArgs e)
+        {
+            select_Gender.SelectedIndex = 0;
+        }
+
+        private void Suffix_input_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                firstName_input.Focus();
+            }
+        }
+
+        private void FirstName_input_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                middleName_input.Focus();
+            }
+        }
+
+        private void MiddleName_input_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                lastName_input.Focus();
+            }
+        }
+
+        private void LastName_input_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                select_Gender.Focus();
+            }
+        }
+
+        private void Select_Gender_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                birthDate_maskedInput.Focus();
+            }
+        }
+
+        private void BirthDate_maskedInput_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                homeAddress_input.Focus();
+            }
+        }
+
+        private void HomeAddress_input_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                email_input.Focus();
+            }
+        }
+
+        private void Email_input_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                mobileNumber_maskediInput.Focus();
+            }
+        }
+
+        private void MobileNumber_maskediInput_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                submit_Btn.PerformClick();
+            }
+        }
+
         public void Submit_Btn_Click(object sender, EventArgs e)
         {
             String minor = "";
 
             if (Check_ifMinor.Checked)
-            {
                 minor = "Under the age of 18";
 
-            }
-
-            if (suffix_input.Text == "")
+            if ((firstName_input.Text == "") || (lastName_input.Text == "") || (select_Gender.Text == "") || (birthDate_maskedInput.Text == "") ||
+                (homeAddress_input.Text == "") || (mobileNumber_maskediInput.Text == ""))
             {
-                suffix_input.Text = "N/A";
+                MessageBox.Show("You must input the required information");
+                
             }
-
-            if (checkAgree.CheckState != CheckState.Checked)
+            else if(checkAgree.CheckState != CheckState.Checked)
             {
                 MessageBox.Show("You must agree to Data Privacy Statement.");
             }
@@ -44,13 +119,13 @@ namespace ContactTracing
                 outputFile.WriteLine(minor);
                 outputFile.WriteLine(SuffixNameLabel.Text + ": " + suffix_input.Text);
                 outputFile.WriteLine(FirstNameLabel.Text + ": " + firstName_input.Text);
-                outputFile.WriteLine(MiddleNameLabel.Text + ": " + lastName_input.Text);
-                outputFile.WriteLine(LastNameLabel.Text + ": " + middleName_input.Text);
+                outputFile.WriteLine(MiddleNameLabel.Text + ": " + middleName_input.Text);
+                outputFile.WriteLine(LastNameLabel.Text + ": " + lastName_input.Text);
                 outputFile.WriteLine(GenderLabel.Text + ": " + select_Gender.Text);
-                outputFile.WriteLine(BirthdateLabel.Text + ": " + birthDate_input.Text);
+                outputFile.WriteLine(BirthdateLabel.Text + ": " + birthDate_maskedInput.Text);
                 outputFile.WriteLine(HomeAddressLabel.Text + ": " + homeAddress_input.Text);
                 outputFile.WriteLine(EmailLabel.Text + ": " + email_input.Text);
-                outputFile.WriteLine(MobileNumberLabel.Text + ": " + mobileNumber_input.Text);
+                outputFile.WriteLine(MobileNumberLabel.Text + ": " + mobileNumber_maskediInput.Text);
                 outputFile.WriteLine("*******************************************************");
                 outputFile.Close();
 
@@ -59,13 +134,13 @@ namespace ContactTracing
                 allOutput.WriteLine(minor);
                 allOutput.WriteLine(SuffixNameLabel.Text + ": " + suffix_input.Text);
                 allOutput.WriteLine(FirstNameLabel.Text + ": " + firstName_input.Text);
-                allOutput.WriteLine(MiddleNameLabel.Text + ": " + lastName_input.Text);
-                allOutput.WriteLine(LastNameLabel.Text + ": " + middleName_input.Text);
+                allOutput.WriteLine(MiddleNameLabel.Text + ": " + middleName_input.Text);
+                allOutput.WriteLine(LastNameLabel.Text + ": " + lastName_input.Text);
                 allOutput.WriteLine(GenderLabel.Text + ": " + select_Gender.Text);
-                allOutput.WriteLine(BirthdateLabel.Text + ": " + birthDate_input.Text);
+                allOutput.WriteLine(BirthdateLabel.Text + ": " + birthDate_maskedInput.Text);
                 allOutput.WriteLine(HomeAddressLabel.Text + ": " + homeAddress_input.Text);
                 allOutput.WriteLine(EmailLabel.Text + ": " + email_input.Text);
-                allOutput.WriteLine(MobileNumberLabel.Text + ": " + mobileNumber_input.Text);
+                allOutput.WriteLine(MobileNumberLabel.Text + ": " + mobileNumber_maskediInput.Text);
                 allOutput.WriteLine("*******************************************************");
                 allOutput.Close();
 
@@ -76,23 +151,10 @@ namespace ContactTracing
             }
         }
 
-        public void MobileNumber_input_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((!char.IsNumber(e.KeyChar)) && (!char.IsControl(e.KeyChar)))
-            {
-                e.Handled = true;
-            }
-        }
-
-        public void Form1_Load(object sender, EventArgs e)
-        {
-            select_Gender.SelectedIndex = 0;
-        }
-
         private void Data_PrivacyLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             MessageBox.Show("The developer respects your individual privacy and protects any personal" +
-                " information that youshare with this contact tracing application. We commit to secure" +
+                " information that you share with this contact tracing application. We commit to secure" +
                 " the individual's right to privacy and ensure the credibility of procesing of individual's" +
                 " personal information.", "DATA PRIVACY STATEMENT");
         }
@@ -110,10 +172,10 @@ namespace ContactTracing
             middleName_input.Clear();
             lastName_input.Clear();
             select_Gender.SelectedIndex = 0;
-            birthDate_input.Clear();
+            birthDate_maskedInput.Clear();
             homeAddress_input.Clear();
             email_input.Clear();
-            mobileNumber_input.Clear();
+            mobileNumber_maskediInput.Clear();
             checkAgree.Checked = false;
         }
 

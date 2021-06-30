@@ -1,11 +1,11 @@
-
-Suffix: N/A
-First Name: 
+Under the age of 18
+Suffix: Jr.
+*First Name: Marc
 Middle Name: 
-Last Name: 
-Gender: --select gender--
-Birth Date: 
-Home Address: 
+*Last Name: Santos
+*Gender: Male
+*Birth Date: 12232010
+*Home Address: Quezon City
 Email: 
-Mobile Number: 
+*Mobile Number: (0999) 999-9999
 *******************************************************

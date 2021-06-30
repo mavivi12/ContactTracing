@@ -20,6 +20,22 @@ namespace ContactTracing
             InitializeComponent();
         }
 
+        private void Username_input_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                password_input.Focus();
+            }
+        }
+
+        private void Password_input_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loginBtn.PerformClick();
+            }
+        }
+
         private void LoginBtn_Click(object sender, EventArgs e)
         {
             if ((username_input.Text == "admin") && (password_input.Text == "PASSWORD"))
@@ -35,6 +51,10 @@ namespace ContactTracing
             else if ((username_input.Text == "") || (password_input.Text == ""))
             {
                 MessageBox.Show("Please enter username and password.", "ACCESS DENIED");
+                attempt += 1;
+                numOfAttemptLabel.Text = attempt.ToString();
+                username_input.Clear();
+                password_input.Clear();
             }
             else
             {
@@ -42,6 +62,8 @@ namespace ContactTracing
 
                 attempt += 1;
                 numOfAttemptLabel.Text = attempt.ToString();
+                username_input.Clear();
+                password_input.Clear();
 
                 if (numOfAttemptLabel.Text == "3")
                 {
