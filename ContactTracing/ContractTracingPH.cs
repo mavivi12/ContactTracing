@@ -20,7 +20,7 @@ namespace ContactTracing
 
         public void Form1_Load(object sender, EventArgs e)
         {
-            select_Gender.SelectedIndex = 0; //at index 0 or first in the list is the label "--select gender--" 
+            select_Gender.SelectedIndex = 0; //at index 0 is the label "--select gender--" 
         }
 
         //When the ENTER key is pressed, the cursor or ibeam will go to the next textbox
@@ -28,7 +28,7 @@ namespace ContactTracing
         {
             if (e.KeyCode == Keys.Enter)
             {
-                firstName_input.Focus(); //press ENTER after input, next textbox
+                firstName_input.Focus(); 
             }
         }
 
@@ -36,7 +36,7 @@ namespace ContactTracing
         {
             if (e.KeyCode == Keys.Enter)
             {
-                middleName_input.Focus(); //press ENTER after input, next textbox
+                middleName_input.Focus(); 
             }
         }
 
@@ -44,7 +44,7 @@ namespace ContactTracing
         {
             if (e.KeyCode == Keys.Enter)
             {
-                lastName_input.Focus(); //press ENTER after input, next textbox
+                lastName_input.Focus(); 
             }
         }
 
@@ -52,7 +52,7 @@ namespace ContactTracing
         {
             if (e.KeyCode == Keys.Enter)
             {
-                select_Gender.Focus(); //press ENTER after input, next textbox
+                select_Gender.Focus(); 
             }
         }
 
@@ -60,7 +60,7 @@ namespace ContactTracing
         {
             if (e.KeyCode == Keys.Enter)
             {
-                birthDate_maskedInput.Focus(); //press ENTER after input, next textbox
+                birthDate_maskedInput.Focus(); 
             }
         }
 
@@ -68,7 +68,7 @@ namespace ContactTracing
         {
             if (e.KeyCode == Keys.Enter)
             {
-                homeAddress_input.Focus(); //press ENTER after input, next textbox
+                homeAddress_input.Focus(); 
             }
         }
 
@@ -76,7 +76,7 @@ namespace ContactTracing
         {
             if (e.KeyCode == Keys.Enter)
             {
-                email_input.Focus(); //press ENTER after input, next textbox
+                email_input.Focus(); 
             }
         }
 
@@ -84,7 +84,7 @@ namespace ContactTracing
         {
             if (e.KeyCode == Keys.Enter)
             {
-                mobileNumber_maskediInput.Focus(); //press ENTER after input, next textbox
+                mobileNumber_maskediInput.Focus(); 
             }
         }
 
@@ -114,9 +114,10 @@ namespace ContactTracing
             {
                 MessageBox.Show("You must agree to Data Privacy Statement.");
             }
-            else //confirmed or user aggreed
+            else //confirmed or user agreed
             {
-                StreamWriter outputFile;       //creating a file for one user
+                //creating a file for one user
+                StreamWriter outputFile;       
                 outputFile = File.CreateText("Personal Information.txt");
                 outputFile.WriteLine(minor);
                 outputFile.WriteLine(SuffixNameLabel.Text + ": " + suffix_input.Text);
@@ -131,7 +132,8 @@ namespace ContactTracing
                 outputFile.WriteLine("*******************************************************");
                 outputFile.Close();
 
-                StreamWriter allOutput;        //file for admin only who can access all the users' information
+                //file for admin only who can access all the users' information
+                StreamWriter allOutput;        
                 allOutput = File.AppendText("Contact Tracing Information.txt");
                 allOutput.WriteLine(minor);
                 allOutput.WriteLine(SuffixNameLabel.Text + ": " + suffix_input.Text);
@@ -146,7 +148,8 @@ namespace ContactTracing
                 allOutput.WriteLine("*******************************************************");
                 allOutput.Close();
 
-                StreamReader inputFile;     //file that can read by a user, to check the details they input
+                //file that can read by a user, to check the details they input
+                StreamReader inputFile;     
                 inputFile = File.OpenText("Personal Information.txt");
                 MessageBox.Show(inputFile.ReadToEnd());
                 inputFile.Close();
