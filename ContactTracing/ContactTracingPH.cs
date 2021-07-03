@@ -20,10 +20,9 @@ namespace ContactTracing
 
         public void Form1_Load(object sender, EventArgs e)
         {
-            select_Gender.SelectedIndex = 0; //at index 0 is the label "--select gender--" 
+            select_Gender.SelectedIndex = 0;
         }
 
-        //When the ENTER key is pressed, the cursor or ibeam will go to the next textbox
         private void Suffix_input_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -92,31 +91,28 @@ namespace ContactTracing
         {
             if (e.KeyCode == Keys.Enter)
             {
-                submit_Btn.PerformClick(); //press ENTER to submit after finish inputting the required info
+                submit_Btn.PerformClick();
             }
         }
 
-        //Submit button
         public void Submit_Btn_Click(object sender, EventArgs e)
         {
             String minor = "";
 
-            if (Check_ifMinor.Checked)  //if user checked the box means they are signing up for a minor
+            if (Check_ifMinor.Checked)  
                 minor = "Under the age of 18";
 
-            //required information
             if ((firstName_input.Text == "") || (lastName_input.Text == "") || (select_Gender.Text == "") || (birthDate_maskedInput.Text == "") ||
                 (homeAddress_input.Text == "") || (mobileNumber_maskediInput.Text == ""))
             {
                 MessageBox.Show("You must input the required information");
             }
-            else if(checkAgree.CheckState != CheckState.Checked) //Confirming if the user agree to the Data Policy
+            else if(checkAgree.CheckState != CheckState.Checked)
             {
                 MessageBox.Show("You must agree to Data Privacy Statement.");
             }
-            else //confirmed or user agreed
+            else 
             {
-                //creating a file for one user
                 StreamWriter outputFile;       
                 outputFile = File.CreateText("Personal Information.txt");
                 outputFile.WriteLine(minor);
@@ -132,7 +128,6 @@ namespace ContactTracing
                 outputFile.WriteLine("*******************************************************");
                 outputFile.Close();
 
-                //file for admin only who can access all the users' information
                 StreamWriter allOutput;        
                 allOutput = File.AppendText("Contact Tracing Information.txt");
                 allOutput.WriteLine(minor);
@@ -148,7 +143,6 @@ namespace ContactTracing
                 allOutput.WriteLine("*******************************************************");
                 allOutput.Close();
 
-                //file that can read by a user, to check the details they input
                 StreamReader inputFile;     
                 inputFile = File.OpenText("Personal Information.txt");
                 MessageBox.Show(inputFile.ReadToEnd());
@@ -156,7 +150,6 @@ namespace ContactTracing
             }
         }
 
-        //when click, statement about data privacy is showed
         private void Data_PrivacyLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             MessageBox.Show("The developer respects your individual privacy and protects any personal" +
@@ -165,13 +158,11 @@ namespace ContactTracing
                 " personal information.", "DATA PRIVACY STATEMENT");
         }
 
-        //close the application
         private void Cancel_Btn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        //submitting new information
         private void SubmitAnotherLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Check_ifMinor.Checked = false;
@@ -187,12 +178,11 @@ namespace ContactTracing
             checkAgree.Checked = false;
         }
 
-        //access to admin window to log in
         private void AdminLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Form Adminlogin = new Form2();
             Adminlogin.Show();
-            this.WindowState = FormWindowState.Minimized; //when the admin window popped up, contact tracing app minimize
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

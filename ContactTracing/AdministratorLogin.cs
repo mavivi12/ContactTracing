@@ -13,14 +13,13 @@ namespace ContactTracing
 {
     public partial class Form2 : Form
     {
-        int attempt = 0; //no attempt
+        int attempt = 0;
 
         public Form2()
         {
             InitializeComponent();
         }
 
-        //press ENTER to go to the next textbox
         private void Username_input_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -29,7 +28,6 @@ namespace ContactTracing
             }
         }
 
-        //press ENTER to log in
         private void Password_input_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -38,10 +36,9 @@ namespace ContactTracing
             }
         }
 
-        //Log in button
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            if ((username_input.Text == "admin") && (password_input.Text == "PASSWORD")) //correct username and password
+            if ((username_input.Text == "admin") && (password_input.Text == "PASSWORD"))
             {
                 MessageBox.Show("Login successfully!", "ACCESS GRANTED");
                 this.Close();
@@ -51,7 +48,7 @@ namespace ContactTracing
                 MessageBox.Show(allinfo.ReadToEnd());
                 allinfo.Close();
             }
-            else if ((username_input.Text == "") || (password_input.Text == "")) //either the username or password is not put in
+            else if ((username_input.Text == "") || (password_input.Text == ""))
             {
                 MessageBox.Show("Please enter username and password.", "ACCESS DENIED");
                 attempt += 1;
@@ -59,16 +56,16 @@ namespace ContactTracing
                 username_input.Clear();
                 password_input.Clear();
             }
-            else    //either the username or password is incorrect
+            else 
             {
                 MessageBox.Show("Incorrect username and/or password.", "ACCESS DENIED");
 
-                attempt += 1;                                      //attempt increment
-                numOfAttemptLabel.Text = attempt.ToString();       //showing the attempts
-                username_input.Clear();                            //removing the previous input
+                attempt += 1;                                      
+                numOfAttemptLabel.Text = attempt.ToString();       
+                username_input.Clear();                           
                 password_input.Clear();
 
-                if (numOfAttemptLabel.Text == "3")  //reached the maximum no. of attempts
+                if (numOfAttemptLabel.Text == "3")  
                 {
                     MessageBox.Show("Attempted 3 times!\nIncorrect username and/or password.\n" +
                         "This window will close.", "ACCESS DENIED");
@@ -77,7 +74,6 @@ namespace ContactTracing
             }
         }
 
-        //close the admin window
         private void CancelBtn_Click(object sender, EventArgs e)
         {
             this.Close();
