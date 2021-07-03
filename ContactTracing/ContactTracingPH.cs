@@ -18,7 +18,7 @@ namespace ContactTracing
             InitializeComponent();
         }
 
-        public void Form1_Load(object sender, EventArgs e)
+        private void Gender()
         {
             select_Gender.SelectedIndex = 0;
         }

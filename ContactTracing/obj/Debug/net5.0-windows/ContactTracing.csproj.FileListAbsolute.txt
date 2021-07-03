@@ -5,7 +5,6 @@ C:\Users\Marvic\Source\Repos\ContactTracing\ContactTracing\bin\Debug\net5.0-wind
 C:\Users\Marvic\Source\Repos\ContactTracing\ContactTracing\bin\Debug\net5.0-windows\ContactTracing.dll
 C:\Users\Marvic\Source\Repos\ContactTracing\ContactTracing\bin\Debug\net5.0-windows\ref\ContactTracing.dll
 C:\Users\Marvic\Source\Repos\ContactTracing\ContactTracing\bin\Debug\net5.0-windows\ContactTracing.pdb
-C:\Users\Marvic\Source\Repos\ContactTracing\ContactTracing\obj\Debug\net5.0-windows\ContactTracing.csprojAssemblyReference.cache
 C:\Users\Marvic\Source\Repos\ContactTracing\ContactTracing\obj\Debug\net5.0-windows\ContactTracing.Form1.resources
 C:\Users\Marvic\Source\Repos\ContactTracing\ContactTracing\obj\Debug\net5.0-windows\ContactTracing.csproj.GenerateResource.cache
 C:\Users\Marvic\Source\Repos\ContactTracing\ContactTracing\obj\Debug\net5.0-windows\ContactTracing.GeneratedMSBuildEditorConfig.editorconfig
@@ -18,3 +17,4 @@ C:\Users\Marvic\Source\Repos\ContactTracing\ContactTracing\obj\Debug\net5.0-wind
 C:\Users\Marvic\Source\Repos\ContactTracing\ContactTracing\obj\Debug\net5.0-windows\ContactTracing.genruntimeconfig.cache
 C:\Users\Marvic\Source\Repos\ContactTracing\ContactTracing\obj\Debug\net5.0-windows\ContactTracing.Properties.Resources.resources
 C:\Users\Marvic\Source\Repos\ContactTracing\ContactTracing\obj\Debug\net5.0-windows\ContactTracing.Form2.resources
+C:\Users\Marvic\Source\Repos\ContactTracing\ContactTracing\obj\Debug\net5.0-windows\ContactTracing.csproj.AssemblyReference.cache
